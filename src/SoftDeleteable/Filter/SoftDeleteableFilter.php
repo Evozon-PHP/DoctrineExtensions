@@ -55,8 +55,8 @@ class SoftDeleteableFilter extends SQLFilter
             return '';
         }
 
-//        $conn = $this->getEntityManager()->getConnection();
-//        $platform = $conn->getDatabasePlatform();
+        $conn = $this->getEntityManager()->getConnection();
+        $platform = $conn->getDatabasePlatform();
         $column = $targetEntity->getQuotedColumnName($config['fieldName'], $platform);
 
         $addCondSql =  $targetTableAlias.'.'.$column . ' = 0';
